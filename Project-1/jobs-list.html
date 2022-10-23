@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Foodtime-Tracking</title>
+    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light">
+
+<!-- Nav -->
+
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow-small mb-3">
+   <div class="container-fluid">
+        <a href="dash.html" class="navbar-brand brand-gradient">
+        <span>FOT2.0</span>
+        </a>
+        <button class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar-supported-content"
+        aria-controls="#navbar-supported-content"
+        aria-expanded="false"
+        aria-label="Toggle Navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-supported-content">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a href="dash.html" class="nav-link active" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="employees-list.html" class="nav-link">Mitarbeiter</a>
+            </li>
+            <li class="nav-item">
+                <a href="jobs-list.html" class="nav-link">Jobausschreibungen</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <div class="hstack gap-3 me-2">
+                <input type="search" class="form-control form-control-sm me-auto" placeholder="Search for..." aria-label="Search for...">
+                <button type="submit" class="btn btn-sm btn-success">
+                    <i class="bi bi-search"></i>  
+                </button>
+            </div>
+            <div class="vr"></div>
+                <a href="index.html" class="btn btn-sm btn-warning ms-2">
+                <i class="bi bi-power"></i>
+                </a>
+        </form>
+    </div>
+   </div>
+</nav>
+
+<!-- Nav -->
+
+<!-- Employees Data -->
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-2">
+            <div class="list-group shadow-sm small mb-3">
+                <div class="list-group-item active">
+                    Jobinformationen
+                </div>
+                <a href="#" class="list-group-item list-group-item-action"
+                data-bs-toggle="modal"
+                data-bs-target="#add_job"
+                >Job hinzufügen</a>
+                <a href="jobs-list.html" class="list-group-item list-group-item-action">Jobangebote ansehen</a>
+            </div>
+            <div class="list-group shadow-sm small mb-3">
+                <div class="list-group-item active">
+                    Verwandte Themen
+                </div>
+                <a href="employees-list.html" class="list-group-item list-group-item-action">Mitarbeiterliste</a>
+        </div>
+        </div>
+        <div class="col-md-10">
+            <div class="card shadow-sm border-0 mn-3">
+                <div class="card-header text-bg-dark text-center">Jobangebote</div>
+                <table class="table table-sm small table-bordered table-striped text-center align-middle mb-0">
+                    <tr class="table-secondary">
+                        <th>ID</th>
+                        <th>Berufsbild</th>
+                        <th>Details</th>
+                        <th>Editieren</th>
+                        <th>Löschen</th>
+                    </tr>
+                    <tr>                       
+                        <th>1</th>
+                        <th>Mediengestalter
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>1</th>
+                        <th>Mediengestalter
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>2</th>
+                        <th>Screendesigner
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>3</th>
+                        <th>Webentwickler
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>4</th>
+                        <th>UI Designer
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>5</th>
+                        <th>Mediengestalter
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>6</th>
+                        <th>Webentwickler
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>7</th>
+                        <th>Mediengestalter
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>8</th>
+                        <th>Screendesigner
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>9</th>
+                        <th>Webentwickler
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_detail">Details</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_edit">Editieren</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="d-grid">
+                                <a href="#"
+                                class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#job_delete">Löschen</a>
+                            </div>
+                        </th>
+                    </tr>
+                    
+   
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Jobs Modal -->
+
+    <div class="modal fade"
+    id="add_job"
+    data-bs-backdrop="static"
+    tabindex="-1"
+    aria-hidden="true"
+    style="backdrop-filter: blur(5px);"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-bg-dark">
+                <h5 class="modal-title"><i class="bi bi-info-circle-fill text white me-3"></i>Jobangebot hinzufügen</h5>
+                <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="container">
+                        <div class="row gx-3">
+                            <div class="col-md-12">
+                                <div class="mb-3 input-group">
+                                    <label for="Eintrittsdatum" class="visually-hidden">Eintrittdatum</label>
+                                    <span class="input-group-text rounded-start bg-dark" id="date-icon"><i class="bi bi-calendar-date-fill text-white"></i></i></span>
+                                    <input type="date" class="form-control" aria-label="Eintrittsdatum" aria-describedby="date-icon" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3 input-group">
+                                    <label for="Berufsbeschreibung" class="visually-hidden">Berufsbeschreibung</label>
+                                    <span class="input-group-text rounded-start bg-dark" id="job-icon"><i class="bi bi-person-fill text-white"></i></span>
+                                    <input type="text" class="form-control" placeholder="Jobbeschreibung" aria-label="jobname" aria-describedby="job-icon" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3 input-group">
+                                    <label for="Berufsbeschreibung" class="visually-hidden">Berufsbeschreibung</label>
+                                    <div class="form-floating w-100">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Berufsbezeichnung hier einfügen....</label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text bg-dark" for="berufsbild"><i class="bi bi-person-workspace text-white"></i></label>
+                                    <select class="form-select" id="berufsbild">
+                                      <option selected>Berufskategorie auswählen</option>
+                                      <option value="Grafikdesigner">Grafikdesigner</option>
+                                      <option value="Screendesigner">Screendesigner</option>
+                                      <option value="Webdeveloper">Webdeveloper</option>
+                                    </select>
+                                  </div>    
+                            </div>
+                            <div class="col-md-9">
+                                <div class="d-grid">
+                                    <button
+                                    type="submit"
+                                    class="btn btn-success">Jobausschreibung einfügen
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="d-grid">
+                                    <button
+                                    type="button"
+                                    class="btn btn-warning"
+                                    data-bs-dismiss="modal"
+                                    aria-label="close">Abbrechen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Details Modal -->
+
+<div class="modal fade"
+id="job_detail"
+data-bs-backdrop="static"
+tabindex="-1"
+aria-hidden="true"
+style="backdrop-filter: blur(5px);"
+>
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header text-bg-dark">
+            <h5 class="modal-title"><i class="bi bi-info-circle-fill text white me-3"></i>Jobausschreibung Details</h5>
+            <button type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="close"></button>
+        </div>
+        <div class="modal-body p-0">
+            <table class="table table-bordered small mb-0 ">
+                <tr>
+                    <th class="w-50"><i class="bi bi-person-fill me-2"></i>ID</th>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th><i class="bi bi-person-workspace me-2"></i>Ausschreibungsdatum</th>
+                    <td>20.10.2021</td>
+                </tr>
+                <tr>
+                    <th><i class="bi bi-person-workspace me-2"></i>Berufsbezeichnung</th>
+                    <td>Mediengestalter</td>
+                </tr>
+                <tr>
+                    <th><i class="bi bi-person-workspace me-2"></i>Jobbeschreibung</th>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Pariatur magni quaerat eum minima veniam natus rerum numquam
+                        voluptatum distinctio sequi?</td>
+                </tr>
+                <tr>
+                    <th><i class="bi bi-person-workspace me-2"></i>Jobkategorie</th>
+                    <td>Junior - Mid </td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-sm btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#employee_edit">
+            Informationen ändern</a>
+            <a href="#" class="btn btn-sm btn-primary"
+            data-bs-dismiss="modal"
+            aria-label="close">
+            Fenster schließen</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Edit Jobs Modal -->
+
+<div class="modal fade"
+id="job_edit"
+data-bs-backdrop="static"
+tabindex="-1"
+aria-hidden="true"
+style="backdrop-filter: blur(5px);"
+>
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header text-bg-dark">
+            <h5 class="modal-title"><i class="bi bi-info-circle-fill text white me-3"></i>Jobausschreibung ändern</h5>
+            <button type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="container">
+                    <div class="row gx-3">
+                        <div class="col-md-12">
+                            <div class="mb-3 input-group">
+                                <label for="Eintrittsdatum" class="visually-hidden">Eintrittdatum</label>
+                                <span class="input-group-text rounded-start bg-dark" id="date-icon"><i class="bi bi-calendar-date-fill text-white"></i></i></span>
+                                <input type="date" class="form-control" aria-label="Eintrittsdatum" aria-describedby="date-icon" value="2022-07-22" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3 input-group">
+                                <label for="Berufsbeschreibung" class="visually-hidden">Berufsbeschreibung</label>
+                                <span class="input-group-text rounded-start bg-dark" id="job-icon"><i class="bi bi-person-fill text-white"></i></span>
+                                <input type="text" class="form-control" placeholder="Jobbeschreibung" aria-label="jobname" aria-describedby="job-icon" value="Mediengestalter - Digital & Print" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3 input-group">
+                                <label for="Berufsbeschreibung" class="visually-hidden">Berufsbeschreibung</label>
+                                <div class="form-floating w-100">
+                                    <textarea class="form-control" placeholder="Beschreibung einfügen..." id="floatingTextarea" value="lorem ipsum..."></textarea>
+                                    <label for="floatingTextarea"></label>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text bg-dark" for="berufsbild"><i class="bi bi-person-workspace text-white"></i></label>
+                                <select class="form-select" id="berufsbild">
+                                  <option>Berufskategorie auswählen</option>
+                                  <option selected value="Grafikdesigner">Grafikdesigner</option>
+                                  <option value="Screendesigner">Screendesigner</option>
+                                  <option value="Webdeveloper">Webdeveloper</option>
+                                </select>
+                              </div>    
+                        </div>
+                        <div class="col-md-9">
+                            <div class="d-grid">
+                                <button
+                                type="submit"
+                                class="btn btn-success">Jobausschreibung ändern
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="d-grid">
+                                <button
+                                type="button"
+                                class="btn btn-warning"
+                                data-bs-dismiss="modal"
+                                aria-label="close">Abbrechen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Delete Jobs Modal -->
+
+<div class="modal fade"
+id="job_delete"
+data-bs-backdrop="static"
+tabindex="-1"
+aria-hidden="true"
+style="backdrop-filter: blur(5px);"
+>
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-body text-center d-flex align-items-center justify-content-between">
+            <h4 class="fw-light m-0">
+                Wollen Sie die Jobausschreibung <strong><q>Mediengestalter</q></strong> wirklich löschen?
+            </h4>
+            <button type="button" class="btn-close ms-auto"
+            data-bs-dismiss="modal"
+            aria-label="close"></button>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm btn-danger">
+            Daten löschen</button>
+            <button type="button" class="btn btn-sm btn-warning"
+            data-bs-dismiss="modal"
+            aria-label="close">
+            Abbrechen</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
